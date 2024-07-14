@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ankita🎂</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+        
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Bodoni Moda', serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(videoplayback.gif);
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fffc45;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        .card h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: bolder;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .card p {
+            font-size: 1em;
+            animation: fadeInUp 2s ease-in-out 1s;
+        }
+
+        .block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .frames {
+            flex: 1 1 calc(33.333% - 20px);
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            background-color: #05e2ff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .frames img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .frames p {
+            font-size: 1.5em;
+            animation: fadeInUp 2s ease-in-out 1s;
+        }
+
+        .frames:hover {
+            transform: scale(1.05);
+        }
+
+        .frames img:hover {
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e91e63;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff4081;
+            animation: confetti 5s linear infinite;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #3f51b5;
+        }
+
+        .confetti:nth-child(2n) {
+            animation-duration: 4s;
+        }
+
+        .confetti:nth-child(3n) {
+            animation-duration: 6s;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .frames {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .card h2 {
+                font-size: 1.75em;
+            }
+
+            .card p {
+                font-size: 0.875em;
+            }
+
+            .frames p {
+                font-size: 1.25em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .frames {
+                flex: 1 1 100%;
+            }
+
+            .card h2 {
+                font-size: 1.5em;
+            }
+
+            .card p {
+                font-size: 0.75em;
+            }
+
+            .frames p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio class="backgroundMusic" autoplay="" loop="">
+        <source src="生日快乐 - Happy birthday Beat with whistle _ Songs instrumental music .mp3" type="audio">    
+    </audio>
+    <div class="container">
+        <div class="card">
+            <div class="inside">
+                <img src="cakegif.gif" alt="Birthday Cake GIF"/>
+                <h2>Happy Birthday Ankita</h2>
+                <p>My dear best friend, may God bless you with abundant joy on your birthday and always!<br>
+                Thank you for always being there.</p>
+                
+                <button class="button" onclick="showConfetti()">Celebrate!</button>
+                <div class="confetti-container" id="confetti-container"></div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="frames frame1">
+                <img src="img1.jpg" alt="Image 1">
+                <p>May God bless you on your birthday, and always</p>
+            </div>
+            <div class="frames frame2">
+                <img src="img2.jpg" alt="Image 2">
+                <p>Keep smiling, keep shining</p>
+            </div>
+            <div class="frames frame3">
+                <img src="img3.jpg" alt="Image 3">
+                <p>May this occasion bring you lots of happiness and success</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showConfetti() {
+            const container = document.getElementById('confetti-container');
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(confetti);
+            }
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 7000);
+        }
+    </script>
+</body>
+</html>
